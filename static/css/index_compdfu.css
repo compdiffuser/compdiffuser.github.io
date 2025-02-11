@@ -1,0 +1,60 @@
+/*  */
+
+.antmaze_high_dim_agv {
+    /* max-width: 100px; */
+    /* border-radius: 10px !important; */
+  }
+  
+  
+  
+/*  */
+
+
+
+
+.antmaze_high_dim_item {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+  
+.antmaze_high_dim_item img {
+    /* width: 50%; */
+    max-width: 235px;
+    border-width: 2.5px; 
+    border-style: solid; 
+    border-color: #A6A6A6;
+    border-radius: 10px !important;
+}
+  
+.antmaze_high_dim_item video {
+    /* width: 50%; */
+    min-width: 150px;
+    max-width: 220px;
+    border-width: 2.5px; 
+    border-style: solid; 
+    /* border-color: #FF7E79; */
+    /* #767171 */
+    border-color: #A6A6A6;
+    border-radius: 10px !important;
+    /* (255, 126, 121, 1); */
+}
+
+
+
+.antmaze_explore_item {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.antmaze_explore_item video {
+    /* width: 50%; */
+    min-width: 150px;
+    max-width: 235px;
+    border-width: 2.5px; 
+    border-style: solid; 
+    /* border-color: #FF7E79; */
+    /* #767171 */
+    border-color: #A6A6A6;
+    border-radius: 10px !important;
+    /* (255, 126, 121, 1); */
+}

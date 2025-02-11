@@ -47,14 +47,26 @@ $(document).ready(function() {
 
 // switch video in multiple morphology
 function update_rm2d_comp_multiH() {
-  var num_rollouts = document.getElementById("rm2d-comp-multi-h-1").value;
+  var num_comp = document.getElementById("rm2d-comp-multi-h-1").value;
   // var inst = document.getElementById("single-menu-instances-single-task-real").value;
   // console.log("gpt", task, inst)
 
   var predv_video = document.getElementById("lb_qual_nVidEp_predv");
   var r_video = document.getElementById("lb_qual_nVidEp_rollout");
 
-  r_video.src = "materials/lb-suc-vs-numRollout/rollout_tk71_envSd120_fps60_r" + num_rollouts + ".mp4";
+  // r_video.src = "materials/lb-suc-vs-numRollout/rollout_tk71_envSd120_fps60_r" + num_rollouts + ".mp4";
+  if (num_comp == 8){
+    r_video.src = "materials/pntM-giant-diff-ncomp/ours_tk1_ncp8_sd75_pIdx0_250205-131131.mp4";
+  }
+  else if (num_comp == 9){
+    r_video.src = "materials/pntM-giant-diff-ncomp/ours_tk1_ncp9_sd79_pIdx0_250205-123431.mp4";
+  }
+  else if (num_comp == 10){
+    r_video.src = "materials/pntM-giant-diff-ncomp/ours_tk1_ncp10_sd79_pIdx0_250205-182941.mp4";
+  }
+  else if (num_comp == 11){
+    r_video.src = "materials/pntM-giant-diff-ncomp/ours_tk1_ncp11_sd47_pIdx0_250205-171732.mp4";
+  }
 
   // video.playbackRate = 2.0;
   r_video.play();
@@ -98,6 +110,44 @@ function update_cal_our_qual_list() {
   playVideosSequentially([predv_video, r_video])
 
 }
+
+
+// Function for the Calvin qualitative dropdown list
+function update_antmaze_high_dim_agv_qual_list() {
+  var tk_name = document.getElementById("antmaze_high_dim_list").value;
+
+  predv_path = ""
+  r_path = ""
+  if (tk_name == 'antmaze_15d_large_tk1') {
+    img_path = "materials/vis_web_agv/antmaze-large-stitch-v0/ours_tk1_ncp5_sd85_back_luo_v3_250205-231630.png"
+    predv_path = "materials/vis_web_agv/antmaze-large-stitch-v0/ours_tk1_ncp5_sd85_back_luo_v3_250205-231630.mp4"
+  } else if (tk_name == 'antmaze_29d_large_tk1') {
+    img_path = "materials/vis_web_agv/antmaze-large-stitch-v0/ours_o29d_tk1_ncp5_sd73_back_luo_v3_250206-002406.png"
+    predv_path = "materials/vis_web_agv/antmaze-large-stitch-v0/ours_o29d_tk1_ncp5_sd73_back_luo_v3_250206-002406.mp4"
+  }
+  else if (tk_name == 'antmaze_15d_medium_tk1') {
+    img_path = "materials/vis_web_agv/antmaze-medium-stitch-v0/ours_o15d_tk1_ncp3_sd41_back_luo_v3_250206-115850.png"
+    predv_path = "materials/vis_web_agv/antmaze-medium-stitch-v0/ours_o15d_tk1_ncp3_sd41_back_luo_v3_250206-115850.mp4"
+  }
+  else if (tk_name == 'antmaze_29d_medium_tk1') {
+    img_path = "materials/vis_web_agv/antmaze-medium-stitch-v0/ours_o29d_tk1_ncp3_sd25_back_luo_v3_250206-014340.png"
+    predv_path = "materials/vis_web_agv/antmaze-medium-stitch-v0/ours_o29d_tk1_ncp3_sd25_back_luo_v3_250206-014340.mp4"
+  }
+
+  img_td = document.getElementById("antmaze_high_dim_topdown");
+  img_td.src = img_path
+
+  predv_video = document.getElementById("antmaze_high_dim_agv_video");
+  predv_video.src = predv_path
+
+  predv_video.currentTime = 0;
+  predv_video.pause();
+  predv_video.play();
+
+}
+
+
+
 
 function playVideosSequentially(videoList) {
 
@@ -171,7 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Select all replay buttons
   // const replayButtons = document.querySelectorAll('.replay');
   // const replayButtons = document.querySelectorAll('.replay, .replay_lb_suc');
-  replayButtons = document.querySelectorAll('.replay, .replay_lb_suc');
+  replayButtons = document.querySelectorAll('.replay, .replay_lb_suc, .replay_v2',);
   // replayButtons = document.querySelectorAll('.replay_lb_suc');
 
   rm_id = 'btn_cal_replay'

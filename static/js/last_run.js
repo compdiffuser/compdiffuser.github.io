@@ -25,7 +25,65 @@
 // splide.mount();
 
 
-var splide = new Splide( '#splide-lb-qual-sc1', {
+
+
+
+
+var splide = new Splide( '#splide-antmaze-medium-qual', {
+  // type: 'loop', 
+  type: 'slide', 
+  perPage: 1,
+  perMove: 1,
+  // gap    : '2rem',
+  padding: '0rem',
+  lazyLoad: 'nearby',
+  focus    : 0,
+  pagination: true,
+  breakpoints: {
+    640: {
+      arrows: false,
+    }
+  },
+  arrows: false,
+  // paginationKeyboard: false,
+
+  // autoplay:  true,
+  
+}
+);
+
+splide.mount();
+
+
+
+var splide = new Splide( '#splide-antmaze-large-qual', {
+  // type: 'loop', 
+  type: 'slide', 
+  perPage: 1,
+  perMove: 1,
+  // gap    : '2rem',
+  padding: '0rem',
+  lazyLoad: 'nearby',
+  focus    : 0,
+  pagination: true,
+  breakpoints: {
+    640: {
+      arrows: false,
+    }
+  },
+  arrows: false,
+  // paginationKeyboard: false,
+
+  // autoplay:  true,
+  
+}
+);
+
+splide.mount();
+
+
+
+var splide = new Splide( '#splide-antmaze-giant-qual', {
   // type: 'loop', 
   type: 'slide', 
   perPage: 1,
@@ -48,55 +106,13 @@ var splide = new Splide( '#splide-lb-qual-sc1', {
 }
 );
 
-splide.on( 'pagination:mounted', function ( data ) {
-  // You can add your class to the UL element
-  // data.list.classList.add( 'splide__pagination--custom' );
-  // data.list.classList.splice(1, 1)
-  // data.list.classList.remove('splide__pagination--ltr')
-  // console.log('luotest', data.list.classList)
-
-  // `items` contains all dot items
-  // data.items.forEach( function ( item ) {
-    // item.button.textContent = String( item.page + 1 );
-  // } );
-
-  // var paginationItems = document.querySelectorAll('.splide__pagination__page');
-  // paginationItems.forEach(function (item, index) {
-  //   item.textContent = index + 1;
-  // });
-} );
-
 splide.mount();
 
 
 
-var splide = new Splide( '#splide-lb-qual-sc2', {
-  // type: 'loop', 
-  type: 'slide', 
-  perPage: 1,
-  perMove: 1,
-  // gap    : '2rem',
-  padding: '0rem',
-  lazyLoad: 'nearby',
-  focus    : 0,
-  pagination: true,
-  breakpoints: {
-    640: {
-      arrows: false,
-    }
-  },
-  // arrow: 1,
-  // paginationKeyboard: false,
-
-  // autoplay:  true,
-  
-}
-);
-
-splide.mount();
 
 
-var splide = new Splide( '#splide-mw-qual', { 
+var splide = new Splide( '#splide_humMaze_2d_medium_stitch', { 
   type: 'slide', 
   perPage: 1,
   perMove: 1,
@@ -109,6 +125,7 @@ var splide = new Splide( '#splide-mw-qual', {
       arrows: false,
     }
   },
+  arrows: false,
 }
 );
 
@@ -137,7 +154,7 @@ splide.mount();
 
 // 
 // 
-var splide = new Splide( '#splide-ithor-qual', { 
+var splide = new Splide( '#splide-antsoccer-arena-qual', { 
   type: 'slide', 
   perPage: 1,
   perMove: 1,
@@ -150,10 +167,107 @@ var splide = new Splide( '#splide-ithor-qual', {
       arrows: false,
     }
   },
+  arrows: false,
 }
 );
 
 splide.mount();
+
+
+//
+//
+var splide = new Splide( '#splide-antsoccer-medium-qual', { 
+  type: 'slide', 
+  perPage: 1,
+  perMove: 1,
+  padding: '0rem',
+  lazyLoad: 'nearby',
+  focus    : 0,
+  pagination: true,
+  breakpoints: {
+    640: {
+      arrows: false,
+    }
+  },
+  arrows: false,
+}
+);
+
+splide.mount();
+
+//
+//
+
+
+
+var splide = new Splide( '#splide_humMaze_2d_large_stitch', {
+  // type: 'loop', 
+  type: 'slide', 
+  perPage: 1,
+  perMove: 1,
+  // gap    : '2rem',
+  padding: '0rem',
+  lazyLoad: 'nearby',
+  focus    : 0,
+  pagination: true,
+  breakpoints: {
+    640: {
+      arrows: false,
+    }
+  },
+  arrows: false,
+  
+}
+);
+
+splide.mount();
+
+
+
+
+
+var splide = new Splide( '#splide_humMaze_2d_giant_stitch', {
+  // type: 'loop', 
+  type: 'slide', 
+  perPage: 1,
+  perMove: 1,
+  // gap    : '2rem',
+  padding: '0rem',
+  lazyLoad: 'nearby',
+  focus    : 0,
+  pagination: true,
+  breakpoints: {
+    640: {
+      arrows: false,
+    }
+  },
+  arrows: false,
+
+  
+}
+);
+
+splide.mount();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

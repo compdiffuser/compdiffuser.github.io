@@ -58,27 +58,84 @@
 
           <div class="is-size-5 publication-authors">
             <!-- TODO: -->
+            <span class="author-block">
+              <a href="author">Yunhao Luo</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://umishra.me/">Utkarsh A. Mishra</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://yilundu.github.io/">Yilun Du</a><sup>†,2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://faculty.cc.gatech.edu/~danfei/">Danfei Xu</a><sup>†,1</sup>
+            </span>
+
             <!-- <span class="author-block">
-              <a href="author">author</a><sup>1,2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="author">author</a><sup>3</sup>
-            </span> -->
-            <span class="author-block">
               Anonymous Authors<sup>1</sup>
-              <!-- <a href="">authors</a><sup>1</sup>, -->
-            </span>
+            </span> -->
+
           </div>
 
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <sup>1</sup> Anonymous Institution
+              <sup>1</sup> Georgia Tech
             </span>
-            
+            <span class="author-block">
+              <sup>2</sup> Harvard University
+            </span>
+            <!-- <span class="author-block">
+              <sup>1</sup> Anonymous Institution
+            </span> -->
+
+            <!-- <br> -->
+            <div style="font-size: 13pt;">
+              <sup>†</sup> Equal advising
+            </div>
 
           </div>
 
           <!-- TODO: Add the link buttons here, such as to ArXiv -->
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- Arxiv -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+
+              
+
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+
+            </div>
+
+          </div>
 
 
           
@@ -130,12 +187,10 @@
 
 
         <figure>
-          <img width="75%" src="materials/1-teaser-v4-for-web.png" style="min-width: 200px">
+          <img width="100%" src="materials/0-method/11-algo-both-v3.png" style="min-width: 200px">
         <p class="caption">
             <b>Method Overview.</b>
-            Our approach learns to ground a large pretrained video model into continuous actions through goal-directed exploration in an environment. 
-            Given a synthesized video, a goal-conditioned policy attempts to reach each visual goal in the video, 
-            with data in the resulting real-world execution saved in a replay buffer to train the goal-conditioned policy.
+            
         </p>
       </figure>
 
@@ -165,35 +220,49 @@
           <div class="video-container text-centered traj_denoise_row" id="comp_dfu_proc_pntmaze_large">
           
             <!-- <center> -->
-            <video width="17%" playsinline="" autoplay="" preload="" muted="">
+            <video width="16%" playsinline="" autoplay="" preload="" muted="">
+              <source src="materials/dfu_proc/ours_tk4_ncp5_sd41_pIdx0_250207-234645.mp4" type="video/mp4">
+            </video>
+
+            <video width="16%" playsinline="" autoplay="" preload="" muted="">
                 <source src="materials/dfu_proc/ours_tk1_ncp5_sd1_pIdx1_250205-002740.mp4" type="video/mp4">
             </video>
 
-            <video width="17%" playsinline="" autoplay="" preload="" muted="">
-              <source src="materials/dfu_proc/ours_tk2_ncp5_sd3_pIdx0_250205-003458.mp4" type="video/mp4">
+            <video width="16%" playsinline="" autoplay="" preload="" muted="">
+              <source src="materials/dfu_proc/ours_tk3_ncp5_sd1_pIdx0_250205-003458.mp4" type="video/mp4">
             </video>
 
-            <video width="17%" playsinline="" autoplay="" preload="" muted="">
-              <source src="materials/dfu_proc/ours_tk3_ncp5_sd1_pIdx0_250205-003458.mp4" type="video/mp4">
+            <video width="16%" playsinline="" autoplay="" preload="" muted="">
+              <!-- <source src="materials/dfu_proc/ours_tk2_ncp5_sd3_pIdx0_250205-003458.mp4" type="video/mp4"> -->
+              <source src="materials/dfu_proc/ours_tk2_ncp5_sd80_pIdx0_250208-004501.mp4" type="video/mp4">
             </video>
 
             
 
-            <p>
-              <div>
-                <b>Compositional Trajectory Denoising Process on OGBench PointMaze Large Stitch.</b>
-                <span class="comp_dfu_prc_repl">
-                    <span class="replay" video_section="comp_dfu_proc_pntmaze_large">
-                      <img src="static/replay.png" />
-                      <span>replay</span>
-                    </span>
-                </span>
-              </div>
-              <!-- Motion trajectories are randomly initialized from Gaussian distribution in timestep $S = 100$. Noises are iteratively removed via the gradient of the energy function. A feasible collision-free trajectory can be obtained at timestep $S = 0$.  -->
-              <!-- We use <a href="https://arxiv.org/abs/2010.02502" class="citation-link">DDIM</a> to accelerate sampling speed. -->
-            </p>
+            
+            
+
+            
 
           </div>
+          <!-- <div class="has-text-centered"></div> -->
+          <br/>
+          <p>
+            <div>
+              <b>Compositional Trajectory Denoising Process.</b>
+              We train CompDiffuser on the OGBench PointMaze Large Stitch Dataset, which only contains short trajectories that travel at most 4 blocks. 
+              However, at test time, the agent needs to travel up to 15 blocks to reach the given goal (purple star) from the start (blue circle).
+              The proposed method is able to compositionally sample 5 trajectories, as shown by different colors, to construct a goal-reaching trajectory of much longer horizon than those seen in the training dataset.
+              <!-- from start (blue circle) to goal (purple star). -->
+              <span class="comp_dfu_prc_repl">
+                <span class="replay_v2" video_section="comp_dfu_proc_pntmaze_large">
+                  <img src="static/replay.png" />
+                  <span>replay</span>
+                </span>
+              </span>
+              
+            </div>
+          </p>
           
         
         
@@ -216,7 +285,7 @@
       <div class="column is-full-width">
 
         <!-- <h2 class="title is-4">  Diverse Compositional Trajectory Morphology  </h2> -->
-        <h2 class="title is-4">  Different Numbers of Composed Trajectories.  </h2>
+        <h2 class="title is-4">Composing Different Numbers of Trajectories </h2>
 
 
         <div class="container bg-3">
@@ -230,7 +299,7 @@
                       <br/>
                       Start (circle) & Goal (star)
                   </p>
-                  <img src="./materials/pntM-giant-diff-ncomp/ours_sg_tk.png" alt="" style="max-width: 235px">
+                  <img src="./materials/pntM-giant-diff-ncomp/ours_sg_tk.png" alt="" style="max-width: 210px">
                 </div>
 
 
@@ -238,7 +307,6 @@
               <!-- style="min-width: 100px;" -->
               <!-- <div class="splide_kuka_space"></div> -->
 
-              <!-- <div class="col-sm-3 centered-caption"> -->
                 <div class="multi_hor_rm2d_item">
                   <div class="multi_hor_rm2d_caption">
                     # of Composed Trajectories $K~ $
@@ -261,10 +329,9 @@
                   <br/>
                   <!-- width:100%;  -->
                   <!-- style="max-width: 235px" -->
-                  <video id="lb_qual_nVidEp_rollout" muted autoplay="" preload="metadata" style="max-width: 235px">
+                  <video id="lb_qual_nVidEp_rollout" muted autoplay="" preload="metadata" style="max-width: 210px">
                     <source src="materials/pntM-giant-diff-ncomp/ours_tk1_ncp9_sd79_pIdx0_250205-123431.mp4" type="video/mp4">
                   </video>
-                  <!-- </div> -->
                 </div>
 
               
@@ -341,7 +408,7 @@
               <div class="container is-max-desktop" style="overflow: hidden; margin: 0px">
 
 
-                <!-- NOTE: AntMaze Medium Stitch -->
+                <!-- NOTE: AntMaze Medium Stitch 2D -->
                 <div id="splide-antmaze-medium-qual" class="splide">
                   <div class="splide__track">
                       <ul class="splide__list">
@@ -459,13 +526,13 @@
 
                         <li class="splide__slide splide_kuka">
 
-                          <div class="splide_page_div_1" id="lb_qual_tk65">
+                          <div class="splide_page_div_1" id="antmaze_2d_large_stitch">
 
 
                              <div>
                               <span class="splide_kuka_prob_id_repl">
                                   AntMaze Large Stitch
-                                  <span class="replay" video_section="lb_qual_tk65">
+                                  <span class="replay" video_section="antmaze_2d_large_stitch">
                                     <img src="static/replay.png" />
                                     <span>replay</span>
                                   </span>
@@ -477,35 +544,35 @@
 
                               <div>
                                 <video playsinline="" autoplay="" muted="">
-                                  <source src="materials/antmaze-large-29D/ep8_True.mp4" type="video/mp4">
+                                  <source src="materials/antmaze-2d-large-stitch/0-good/ep13_True.mp4" type="video/mp4">
                                 </video>
                                 <p class="splide_kuka_caption">Task 1</p>
                               </div>
 
                               <div>
                                 <video playsinline="" autoplay="" muted="">
-                                  <source src="materials/antmaze-large-29D/ep36_True.mp4" type="video/mp4">
+                                  <source src="materials/antmaze-2d-large-stitch/0-good/ep21_True.mp4" type="video/mp4">
                                 </video>
                                 <p class="splide_kuka_caption">Task 2</p>
                               </div>
 
                               <div>
                                 <video playsinline="" autoplay="" muted="">
-                                  <source src="materials/antmaze-large-29D/ep52_True.mp4" type="video/mp4">
+                                  <source src="materials/antmaze-2d-large-stitch/0-good/ep54_True.mp4" type="video/mp4">
                                 </video>
                                 <p class="splide_kuka_caption">Task 3</p>
                               </div>
 
                               <div>
                                 <video playsinline="" autoplay="" muted="">
-                                  <source src="materials/antmaze-large-29D/ep61_True.mp4" type="video/mp4">
+                                  <source src="materials/antmaze-2d-large-stitch/0-good/ep70_True.mp4" type="video/mp4">
                                 </video>
                                 <p class="splide_kuka_caption">Task 4</p>
                               </div>
 
                               <div>
                                 <video playsinline="" autoplay="" muted="">
-                                  <source src="materials/antmaze-large-29D/ep82_True.mp4" type="video/mp4">
+                                  <source src="materials/antmaze-2d-large-stitch/0-good/ep96_True.mp4" type="video/mp4">
                                 </video>
                                 <p class="splide_kuka_caption">Task 5</p>
                               </div>
@@ -833,509 +900,12 @@
 
 
 
-
-
-
-
-
-
-
 <hr>
 
+<!-- ========================================================== -->
+<!-- NOTE: Section:AntMaze Ablation Studies Qualitative Results -->
+<!-- ========================================================== -->
 
-<!-- NOTE: Section:HumanoidMaze Qualitative Results -->
-
-
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-4">OGBench HumanoidMaze Stitch Datasets</h2>
-
-        <section class="hero is-light is-small" style="margin: 0px; padding: 0px">
-          <div class="container is-max-desktop"  style="margin: 0px;  padding: 0px">
-            <div class="hero-body"  style="margin: 0px;  padding-bottom: 10px; padding-top: 10px">
-
-              <div class="container is-max-desktop" style="overflow: hidden; margin: 0px">
-
-                <div id="splide-mw-qual" class="splide">
-                  <div class="splide__track">
-                      <ul class="splide__list">
-
-
-
-                        <!-- MW TK 4 -->
-                        <li class="splide__slide splide_kuka">
-
-                          <div class="splide_page_div_1" id="mw_qual_tk4">
-
-                             <div>
-                              <span class="splide_kuka_prob_id_repl">
-                                  HumanoidMaze Medium Stitch
-                                  <span class="replay" video_section="mw_qual_tk4">
-                                    <img src="static/replay.png" />
-                                    <span>replay</span>
-                                  </span>
-                              </span>
-                            </div>
-                            
-                            <div class="kuka_base_row">
-
-                              <div>
-                                <video playsinline="" autoplay="" muted="">
-                                  <source src="materials/mw/4-ours-hammer/016-True-predv0.mp4" type="video/mp4">
-                                </video>
-                                <p class="splide_kuka_caption">Synthesized Video</p>
-                              </div>
-
-                              <div>
-                                <video playsinline="" autoplay="" muted="">
-                                  <source src="materials/mw/4-avdc-evSd1-hammer/corner2-016-False.mp4" type="video/mp4">
-                                </video>
-                                <p class="splide_kuka_caption">AVDC</p>
-                              </div>
-
-                              <div>
-                                <video playsinline="" autoplay="" muted="">
-                                  <source src="materials/mw/4-metabc-100k-hammer/016-False.mp4" type="video/mp4">
-                                </video>
-                                <p class="splide_kuka_caption">BC</p>
-                              </div>
-
-                              <div>
-                                <video playsinline="" autoplay="" muted="">
-                                  <source src="materials/mw/4-gcbc-100k-hammer/016-False.mp4" type="video/mp4">
-                                </video>
-                                <p class="splide_kuka_caption">GCBC</p>
-                              </div>
-
-
-                              <div>
-                                <video playsinline="" autoplay="" muted="">
-                                  <source src="materials/mw/4-ours-hammer/016-True.mp4" type="video/mp4">
-                                </video>
-                                <p class="splide_kuka_caption">Ours</p>
-                              </div>
-
-                            </div>
-
-                          </div>
-                        </li>
-
-
-
-
-
-                        <!-- MW TK 3 -->
-                        <li class="splide__slide splide_kuka">
-
-                          <div class="splide_page_div_1" id="mw_qual_tk3">
-
-                             <div>
-                              <span class="splide_kuka_prob_id_repl">
-                                  Handle Press
-                                  <span class="replay" video_section="mw_qual_tk3">
-                                    <img src="static/replay.png" />
-                                    <span>replay</span>
-                                  </span>
-                              </span>
-                            </div>
-                            
-                            <div class="kuka_base_row">
-
-                              <div>
-                                <video playsinline="" autoplay="" muted="">
-                                  <source src="materials/mw/3-ours-handle-press/009-True-predv0.mp4" type="video/mp4">
-                                </video>
-                                <p class="splide_kuka_caption">Synthesized Video</p>
-                              </div>
-
-                              <div>
-                                <video playsinline="" autoplay="" muted="">
-                                  <source src="materials/mw/3-avdc-evSd1-handle-press/corner2_9_crop.mp4" type="video/mp4">
-                                </video>
-                                <p class="splide_kuka_caption">AVDC</p>
-                              </div>
-
-                              <div>
-                                <video playsinline="" autoplay="" muted="">
-                                  <source src="materials/mw/3-metabc-100k-handle-press/009-False.mp4" type="video/mp4">
-                                </video>
-                                <p class="splide_kuka_caption">BC</p>
-                              </div>
-
-                              <div>
-                                <video playsinline="" autoplay="" muted="">
-                                  <source src="materials/mw/3-gcbc-100k-handle-press/009-False.mp4" type="video/mp4">
-                                </video>
-                                <p class="splide_kuka_caption">GCBC</p>
-                              </div>
-
-                              <!-- TODO: -->
-                              <div>
-                                <video playsinline="" autoplay="" muted="">
-                                  <source src="materials/mw/3-ours-handle-press/009-True.mp4" type="video/mp4">
-                                </video>
-                                <p class="splide_kuka_caption">Ours</p>
-                              </div>
-
-                            </div>
-
-                          </div>
-                        </li>
-
-                        
-
-                        
-
-                        
-
-                      </ul>
-                  </div>
-                </div>
-
-
-              </div>
-              <!-- -- <a href="https://flow-diffusion.github.io/" class="citation-link">AVDC</a>, Behavior Cloning (BC), and Goal-conditioned Behavior Cloning (GCBC) -->
-              <b> Qualitative Comparison in Meta-World Environment.</b> 
-              We present environment rollouts of our goal-conditioned exploration policy along with  various baselines.
-              Our Policy can accurately reach each subgoal given by the synthesized video and thus completes the tasks, while GCBC and other baselines fail. This is probably due to that our goal-directed exploration can significantly enhance the policy by focusing the exploration on the task-relevant state space. 
-              <!-- video-guided -->
-            </div>
-          </div>  
-        </section>
-
-        <!-- <b> Qualitative Comparison in Meta-World Environment.</b>  -->
-        
-        
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<hr>
-
-
-
-
-
-
-
-<!-- Begins iTHOR Qualitative Results -->
-
-
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-4">iTHOR Visual Navigation Environment</h2>
-
-        <section class="hero is-light is-small" style="margin: 0px; padding: 0px">
-          <div class="container is-max-desktop"  style="margin: 0px;  padding: 0px">
-            <div class="hero-body"  style="margin: 0px;  padding-bottom: 10px; padding-top: 10px">
-
-              <div class="container is-max-desktop" style="overflow: hidden; margin: 0px">
-
-                <div id="splide-ithor-qual" class="splide">
-                  <div class="splide__track">
-                      <ul class="splide__list">
-
-
-
-                        <!-- iThor FloorPlan1 Bread 19 -->
-                        <li class="splide__slide splide_kuka">
-
-                          <div class="splide_page_div_1" id="ithor_qual_fp1">
-
-                             <div>
-                              <span class="splide_kuka_prob_id_repl">
-                                  Kitchen, Target: Bread
-                                  <span class="replay" video_section="ithor_qual_fp1">
-                                    <img src="static/replay.png" />
-                                    <span>replay</span>
-                                  </span>
-                              </span>
-                            </div>
-                            
-                            <div class="kuka_base_row">
-
-                              <div>
-                                <video playsinline="" autoplay="" muted="">
-                                  <source src="materials/ithor/ours-evSd4-FloorPlan1-Bread/predv_Cat_tkFloorPlan1_Bread_envSd19_fps4_v2.mp4" type="video/mp4">
-                                </video>
-                                <p class="splide_kuka_caption">Synthesized Video</p>
-                              </div>
-
-                              <div>
-                                <video playsinline="" autoplay="" muted="">
-                                  <source src="materials/ithor/avdc-evSd1-FloorPlan1-Bread/019-False.mp4" type="video/mp4">
-                                </video>
-                                <p class="splide_kuka_caption">AVDC</p>
-                              </div>
-
-                              <div>
-                                <video playsinline="" autoplay="" muted="">
-                                  <source src="materials/ithor/metabc-10k-FloorPlan1-Bread/019-False.mp4" type="video/mp4">
-                                </video>
-                                <p class="splide_kuka_caption">BC</p>
-                              </div>
-
-                              <div>
-                                <video playsinline="" autoplay="" muted="">
-                                  <source src="materials/ithor/gcbc-10k-FloorPlan1-Bread/019-False.mp4" type="video/mp4">
-                                </video>
-                                <p class="splide_kuka_caption">GCBC</p>
-                              </div>
-
-
-                              <div>
-                                <video playsinline="" autoplay="" muted="">
-                                  <source src="materials/ithor/ours-evSd4-FloorPlan1-Bread/rollout_tkFloorPlan1_Bread_envSd19_fps4.mp4" type="video/mp4">
-                                </video>
-                                <p class="splide_kuka_caption">Ours</p>
-                              </div>
-
-                            </div>
-
-                          </div>
-                        </li>
-
-                        <!-- FloorPlan 201 -->
-                        <li class="splide__slide splide_kuka">
-
-                          <div class="splide_page_div_1" id="ithor_qual_fp2">
-
-                             <div>
-                              <span class="splide_kuka_prob_id_repl">
-                                  Living Room, Target: Television
-                                  <span class="replay" video_section="ithor_qual_fp2">
-                                    <img src="static/replay.png" />
-                                    <span>replay</span>
-                                  </span>
-                              </span>
-                            </div>
-                            
-                            <div class="kuka_base_row">
-
-                              <div>
-                                <video playsinline="" autoplay="" muted="">
-                                  <source src="materials/ithor/ours-evSd4-FloorPlan201-Television/predv_Cat_tkFloorPlan201_Television_envSd12_fps4_v2.mp4" type="video/mp4">
-                                </video>
-                                <p class="splide_kuka_caption">Synthesized Video</p>
-                              </div>
-
-                              <div>
-                                <video playsinline="" autoplay="" muted="">
-                                  <source src="materials/ithor/avdc-evSd1-FloorPlan201-Television/012-False.mp4" type="video/mp4">
-                                </video>
-                                <p class="splide_kuka_caption">AVDC</p>
-                              </div>
-
-                              <div>
-                                <video playsinline="" autoplay="" muted="">
-                                  <source src="materials/ithor/metabc-10k-FloorPlan201-Television/012-False.mp4" type="video/mp4">
-                                </video>
-                                <p class="splide_kuka_caption">BC</p>
-                              </div>
-
-                              <div>
-                                <video playsinline="" autoplay="" muted="">
-                                  <source src="materials/ithor/gcbc-10k-FloorPlan201-Television/012-False.mp4" type="video/mp4">
-                                </video>
-                                <p class="splide_kuka_caption">GCBC</p>
-                              </div>
-
-
-                              <div>
-                                <video playsinline="" autoplay="" muted="">
-                                  <source src="materials/ithor/ours-evSd4-FloorPlan201-Television/rollout_tkFloorPlan201_Television_envSd12_fps4.mp4" type="video/mp4">
-                                </video>
-                                <p class="splide_kuka_caption">Ours</p>
-                              </div>
-
-                            </div>
-
-                          </div>
-                        </li>
-
-
-                        <!-- FloorPlan 301 -->
-                        <li class="splide__slide splide_kuka">
-
-                          <div class="splide_page_div_1" id="ithor_qual_fp301">
-
-                             <div>
-                              <span class="splide_kuka_prob_id_repl">
-                                  Bedroom, Target: Blinds
-                                  <span class="replay" video_section="ithor_qual_fp301">
-                                    <img src="static/replay.png" />
-                                    <span>replay</span>
-                                  </span>
-                              </span>
-                            </div>
-                            
-                            <div class="kuka_base_row">
-
-                              <div>
-                                <!-- TODO: -->
-                                <video playsinline="" autoplay="" muted="">
-                                  <source src="materials/ithor/ours-evSd4-FloorPlan301-Blinds/004-True_predv_cat.mp4" type="video/mp4">
-                                </video>
-                                <p class="splide_kuka_caption">Synthesized Video</p>
-                              </div>
-
-                              <div>
-                                <video playsinline="" autoplay="" muted="">
-                                  <source src="materials/ithor/avdc-evSd1-FloorPlan301-Blinds/004-False.mp4" type="video/mp4">
-                                </video>
-                                <p class="splide_kuka_caption">AVDC</p>
-                              </div>
-
-                              <div>
-                                <video playsinline="" autoplay="" muted="">
-                                  <source src="materials/ithor/metabc-10k-FloorPlan301-Blinds/004-False.mp4" type="video/mp4">
-                                </video>
-                                <p class="splide_kuka_caption">BC</p>
-                              </div>
-
-                              <div>
-                                <video playsinline="" autoplay="" muted="">
-                                  <source src="materials/ithor/gcbc-10k-FloorPlan301-Blinds/004-True.mp4" type="video/mp4">
-                                </video>
-                                <p class="splide_kuka_caption">GCBC</p>
-                              </div>
-
-
-                              <div>
-                                <video playsinline="" autoplay="" muted="">
-                                  <source src="materials/ithor/ours-evSd4-FloorPlan301-Blinds/004-True.mp4" type="video/mp4">
-                                </video>
-                                <p class="splide_kuka_caption">Ours</p>
-                              </div>
-
-                            </div>
-
-                          </div>
-                        </li>
-
-
-                        <!-- FloorPlan 401 -->
-                        <li class="splide__slide splide_kuka">
-
-                          <div class="splide_page_div_1" id="ithor_qual_fp401">
-
-                             <div>
-                              <span class="splide_kuka_prob_id_repl">
-                                  Bathroom, Target: Mirror
-                                  <span class="replay" video_section="ithor_qual_fp401">
-                                    <img src="static/replay.png" />
-                                    <span>replay</span>
-                                  </span>
-                              </span>
-                            </div>
-                            
-                            <div class="kuka_base_row">
-
-                              <div>
-                                <video playsinline="" autoplay="" muted="">
-                                  <source src="materials/ithor/ours-evSd4-FloorPlan401-Mirror/predv_Cat_tkFloorPlan401_Mirror_envSd4_fps4_v2.mp4" type="video/mp4">
-                                </video>
-                                <p class="splide_kuka_caption">Synthesized Video</p>
-                              </div>
-
-                              <div>
-                                <video playsinline="" autoplay="" muted="">
-                                  <source src="materials/ithor/avdc-evSd1-FloorPlan401-Mirror/004-False.mp4" type="video/mp4">
-                                </video>
-                                <p class="splide_kuka_caption">AVDC</p>
-                              </div>
-
-                              <div>
-                                <video playsinline="" autoplay="" muted="">
-                                  <source src="materials/ithor/metabc-10k-FloorPlan401-Mirror/004-False.mp4" type="video/mp4">
-                                </video>
-                                <p class="splide_kuka_caption">BC</p>
-                              </div>
-
-                              <!-- TODO: -->
-                              <div>
-                                <video playsinline="" autoplay="" muted="">
-                                  <source src="materials/ithor/gcbc-10k-FloorPlan401-Mirror/004-False.mp4" type="video/mp4">
-                                </video>
-                                <p class="splide_kuka_caption">GCBC</p>
-                              </div>
-
-
-                              <div>
-                                <video playsinline="" autoplay="" muted="">
-                                  <source src="materials/ithor/ours-evSd4-FloorPlan401-Mirror/rollout_tkFloorPlan401_Mirror_envSd4_fps4.mp4" type="video/mp4">
-                                </video>
-                                <p class="splide_kuka_caption">Ours</p>
-                              </div>
-
-                            </div>
-
-                          </div>
-                        </li>
-
-
-                        
-
-                        
-
-                        
-
-                        
-
-                      </ul>
-                  </div>
-                </div>
-
-
-              </div>
-              <b> Qualitative Comparison in iTHOR Environment.</b> 
-              <!-- -- <a href="https://flow-diffusion.github.io/" class="citation-link">AVDC</a>, Behavior Cloning (BC), and Goal-conditioned Behavior Cloning (GCBC). -->
-              We present environment rollouts of our goal-conditioned exploration policy along with various baselines.
-              Both AVDC and BC tend to predict the wrong actions or stop pre-maturely. 
-              Though GCBC is able to perform comparably to our policy, it might require extra action steps (see FloorPlan 301).
-              Our policy is able to successfully reach the target object by correctly following the synthesized video.
-            </div>
-          </div>  
-        </section>
-
-        <!-- <b> Qualitative Comparison in Meta-World Environment.</b>  -->
-        
-        
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-
-
-
-
-<!-- ============= Calvin ============== --> 
-<!-- ============= Calvin ============== --> 
 
 
 
@@ -1389,7 +959,7 @@
                   </div>
 
                   <video id="antmaze_high_dim_agv_video" class="antmaze_high_dim_agv" 
-                  muted preload="metadata">
+                  muted autoplay="" preload="metadata">
                     <source src="materials/vis_web_agv/antmaze-large-stitch-v0/ours_tk1_ncp5_sd85_back_luo_v3_250205-231630.mp4" type="video/mp4">
                   </video>
 
@@ -1429,27 +999,29 @@
 
 
         <div class="container bg-3">
-          <div class="row centered-caption" style="justify-content: center;">
+          <div class="centered-caption" style="justify-content: center;">
+
 
             <span class="splide_kuka_prob_id_repl">
               Task: &nbsp;
               <!-- </p> -->
               <div class="select is-small">     
-                <select id="antm-explore-qual-list" onchange="update_antmaze_exp_qual_list()">
-                  <option value="antm_medium_exp_2d" selected="selected">AntMaze Medium Explore </option>
-                  <option value="antm_medium_exp_15d">AntMaze Medium Explore 15D</option>
-                  <option value="antm_medium_exp_29d">AntMaze Medium Explore 29D</option>
-                  <option value="antm_large_exp_2d">AntMaze Large Explore</option>
+                <select id="antm-explore-qual-list" onchange="update_antmaze_explore_qual_list()">
+                  <option value="antm_large_exp_2d" selected="selected">AntMaze Large Explore</option>
                   <option value="antm_large_exp_15d">AntMaze Large Explore 15D</option>
                   <option value="antm_large_exp_29d">AntMaze Large Explore 29D</option>
+                  <option value="antm_medium_exp_2d">AntMaze Medium Explore</option>
+                  <option value="antm_medium_exp_15d">AntMaze Medium Explore 15D</option>
+                  <option value="antm_medium_exp_29d">AntMaze Medium Explore 29D</option>
                 </select>
               </div>
-              <!-- sequential reply -->
-              <span class="replay_lb_suc" id="btn_cal_replay" video_section="div_cal_our_qual">
+              <!-- replay together -->
+              <span class="replay_lb_suc" video_section="div_cal_our_qual">
                 <img src="static/replay.png" />
                 <span>replay</span>
               </span>
             </span>
+
             
 
             <div class="video-container" style="gap: 0px" id="div_cal_our_qual">
@@ -1459,21 +1031,25 @@
                     Example Demonstrations
                     <!-- Demonstration Episodes -->
                   </p>
-                  <video id="cal-our-qual-list-predv" muted muted preload="metadata">
+                  <video id="antmaze_exp_qual_list_dset" muted autoplay="" preload="metadata">
                     <source src="materials/antmaze-explore/antmaze-large-explore-v0-r800-250206-232925.mp4" type="video/mp4">
                   </video>
                 </div>
 
-                <div class="multi_hor_rm2d_item">
+                <!-- multi_hor_rm2d_item -->
+                <div class="antmaze_explore_item">
                   <div class="multi_hor_rm2d_caption cal_our_qual_caption"> 
                     Our Rollout
                   </div>
 
-                  <video id="cal-our-qual-list-rollout" muted muted preload="metadata">
-                    <source src="" type="video/mp4">
+                  <video id="antmaze_exp_qual_list_rollout" muted autoplay="" preload="metadata">
+                    <source src="materials/antmaze-explore/antm-large-2d/0-good/ep9_True.mp4" type="video/mp4">
                   </video>
 
                 </div>
+            </div>
+            
+            
 
               
 
@@ -1483,9 +1059,8 @@
               <!-- We present the synthesized video side by side with the policy rollout in the environment.  -->
               <!-- The policy is only trained by the proposed exploration framework, without access to action annotations or environment rewards (including the task success signal). -->
             </div>
+          
           </div>
-          
-          
         </div>
        
 
@@ -1497,6 +1072,634 @@
   </div>
 </section>
 
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-4">OGBench AntSoccer Stitch Environments</h2>
+        
+
+        <section class="hero is-light is-small" style="margin: 0px; padding: 0px">
+          <div class="container is-max-desktop"  style="margin: 0px;  padding: 0px">
+            <div class="hero-body"  style="margin: 0px;  padding-bottom: 10px; padding-top: 10px">
+
+              <div class="container is-max-desktop" style="overflow: hidden; margin: 0px">
+
+                <div id="splide-antsoccer-arena-qual" class="splide">
+                  <div class="splide__track">
+                      <ul class="splide__list">
+
+
+
+                        <!-- iThor FloorPlan1 Bread 19 -->
+                        <li class="splide__slide splide_kuka">
+
+                          <div class="splide_page_div_1" id="ithor_qual_fp1">
+
+                             <div>
+                              <span class="splide_kuka_prob_id_repl">
+                                  AntSoccer Arena Stitch
+                                  <span class="replay" video_section="ithor_qual_fp1">
+                                    <img src="static/replay.png" />
+                                    <span>replay</span>
+                                  </span>
+                              </span>
+                            </div>
+                            
+                            <div class="kuka_base_row">
+
+                              <div>
+                                <video playsinline="" autoplay="" muted="">
+                                  <source src="materials/antsoccer-17d-arena-stitch/0-good-tk1/ep1_True.mp4" type="video/mp4">
+                                </video>
+                                <p class="splide_kuka_caption">Task 1</p>
+                              </div>
+
+                              <div>
+                                <video playsinline="" autoplay="" muted="">
+                                  <source src="materials/antsoccer-17d-arena-stitch/0-good/ep39_True.mp4" type="video/mp4">
+                                </video>
+                                <p class="splide_kuka_caption">Task 2</p>
+                              </div>
+
+                              <div>
+                                <video playsinline="" autoplay="" muted="">
+                                  <source src="materials/antsoccer-17d-arena-stitch/0-good/ep46_True.mp4" type="video/mp4">
+                                </video>
+                                <p class="splide_kuka_caption">Task 3</p>
+                              </div>
+
+                              <div>
+                                <video playsinline="" autoplay="" muted="">
+                                  <source src="materials/antsoccer-17d-arena-stitch/0-good/ep72_True.mp4" type="video/mp4">
+                                </video>
+                                <p class="splide_kuka_caption">Task 4</p>
+                              </div>
+
+
+                              <div>
+                                <video playsinline="" autoplay="" muted="">
+                                  <source src="materials/antsoccer-17d-arena-stitch/0-good/ep82_True.mp4" type="video/mp4">
+                                </video>
+                                <p class="splide_kuka_caption">Task 5</p>
+                              </div>
+
+                            </div>
+
+                          </div>
+                        </li>
+
+                        
+
+                        
+
+                        
+
+                      </ul>
+                  </div>
+                </div>
+
+
+              </div>
+              <b>Environment Rollout of CompDiffuser in AntSoccer Arena Environments.</b> 
+              In this task, the ant needs to move the ball to the goal position as shown by the pink circle. The initial position of the ant and the ball is shown by the blue and yellow circle respectively.
+              The model is trained on two different types of trajectories: 1) the ant moves without dribbling the ball; 2) the ant moves while dribbling balling. 
+              At test time, our method stitches these two types of trajectories to achieve the goal by first moving to the ball from the far side and dribble the ball to the goal position.
+            </div>
+          </div>  
+        </section>
+
+        <!-- <b> Qualitative Comparison in Meta-World Environment.</b>  -->
+        
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <!-- <h2 class="title is-4">OGBench AntSoccer Stitch Environments</h2> -->
+
+        <section class="hero is-light is-small" style="margin: 0px; padding: 0px">
+          <div class="container is-max-desktop"  style="margin: 0px;  padding: 0px">
+            <div class="hero-body"  style="margin: 0px;  padding-bottom: 10px; padding-top: 10px">
+
+              <div class="container is-max-desktop" style="overflow: hidden; margin: 0px">
+
+                <div id="splide-antsoccer-medium-qual" class="splide">
+                  <div class="splide__track">
+                      <ul class="splide__list">
+
+
+
+                        <!-- iThor FloorPlan1 Bread 19 -->
+                        <li class="splide__slide splide_kuka">
+
+                          <div class="splide_page_div_1" id="ithor_qual_fp1">
+
+                             <div>
+                              <span class="splide_kuka_prob_id_repl">
+                                  AntSoccer Medium Stitch
+                                  <span class="replay" video_section="ithor_qual_fp1">
+                                    <img src="static/replay.png" />
+                                    <span>replay</span>
+                                  </span>
+                              </span>
+                            </div>
+                            
+                            <div class="kuka_base_row">
+
+                              <div>
+                                <video playsinline="" autoplay="" muted="">
+                                  <source src="" type="video/mp4">
+                                </video>
+                                <p class="splide_kuka_caption">Task 1</p>
+                              </div>
+
+                              <div>
+                                <video playsinline="" autoplay="" muted="">
+                                  <source src="" type="video/mp4">
+                                </video>
+                                <p class="splide_kuka_caption">Task 2</p>
+                              </div>
+
+                              <div>
+                                <video playsinline="" autoplay="" muted="">
+                                  <source src="" type="video/mp4">
+                                </video>
+                                <p class="splide_kuka_caption">Task 3</p>
+                              </div>
+
+                              <div>
+                                <video playsinline="" autoplay="" muted="">
+                                  <source src="" type="video/mp4">
+                                </video>
+                                <p class="splide_kuka_caption">Task 4</p>
+                              </div>
+
+
+                              <div>
+                                <video playsinline="" autoplay="" muted="">
+                                  <source src="" type="video/mp4">
+                                </video>
+                                <p class="splide_kuka_caption">Task 5</p>
+                              </div>
+
+                            </div>
+
+                          </div>
+                        </li>
+
+                        
+
+                        
+
+                        
+
+                      </ul>
+                  </div>
+                </div>
+
+
+              </div>
+              <b>Environment Rollout of CompDiffuser in AntSoccer Medium Environments.</b> 
+              In this task, the ant needs to move the ball to the goal position as shown by the pink circle. The initial position of the ant and the ball is shown by the blue and yellow circle respectively.
+              The model is trained on two different types of trajectories: 1) the ant moves without dribbling the ball; 2) the ant moves while dribbling balling. 
+              At test time, our method stitches these two types of trajectories to achieve the goal by first moving to the ball from the far side and dribble the ball to the goal position.
+            </div>
+          </div>  
+        </section>
+
+        <!-- <b> Qualitative Comparison in Meta-World Environment.</b>  -->
+        
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+<!-- ============================================== -->
+<!-- NOTE: Section:HumanoidMaze Qualitative Results -->
+<!-- ============================================== -->
+
+
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-4">OGBench HumanoidMaze Stitch Datasets</h2>
+
+        <section class="hero is-light is-small" style="margin: 0px; padding: 0px">
+          <div class="container is-max-desktop"  style="margin: 0px;  padding: 0px">
+            <div class="hero-body"  style="margin: 0px;  padding-bottom: 10px; padding-top: 10px">
+
+              <div class="container is-max-desktop" style="overflow: hidden; margin: 0px">
+
+                <div id="splide_humMaze_2d_medium_stitch" class="splide">
+                  <div class="splide__track">
+                      <ul class="splide__list">
+
+
+                        <li class="splide__slide splide_kuka">
+
+                          <div class="splide_page_div_1" id="mw_qual_tk4">
+
+                             <div>
+                              <span class="splide_kuka_prob_id_repl">
+                                  HumanoidMaze Medium Stitch
+                                  <span class="replay" video_section="mw_qual_tk4">
+                                    <img src="static/replay.png" />
+                                    <span>replay</span>
+                                  </span>
+                              </span>
+                            </div>
+                            
+                            <div class="kuka_base_row">
+
+                              <div>
+                                <video playsinline="" autoplay="" muted="">
+                                  <source src="materials/humMaze-2d-medium-stitch/0-good/ep9_True.mp4" type="video/mp4">
+                                </video>
+                                <p class="splide_kuka_caption">Task 1</p>
+                              </div>
+
+                              <div>
+                                <video playsinline="" autoplay="" muted="">
+                                  <source src="materials/humMaze-2d-medium-stitch/0-good/ep36_True.mp4" type="video/mp4">
+                                </video>
+                                <p class="splide_kuka_caption">Task 2</p>
+                              </div>
+
+                              <div>
+                                <video playsinline="" autoplay="" muted="">
+                                  <source src="materials/humMaze-2d-medium-stitch/0-good/ep53_True.mp4" type="video/mp4">
+                                </video>
+                                <p class="splide_kuka_caption">Task 3</p>
+                              </div>
+
+                              <div>
+                                <video playsinline="" autoplay="" muted="">
+                                  <source src="materials/humMaze-2d-medium-stitch/0-good/ep79_True.mp4" type="video/mp4">
+                                </video>
+                                <p class="splide_kuka_caption">Task 4</p>
+                              </div>
+
+
+                              <div>
+                                <video playsinline="" autoplay="" muted="">
+                                  <source src="materials/humMaze-2d-medium-stitch/0-good-2/ep91_True.mp4" type="video/mp4">
+                                </video>
+                                <p class="splide_kuka_caption">Task 5</p>
+                              </div>
+
+                            </div>
+
+                          </div>
+                        </li>
+
+
+
+
+
+                        
+
+                        
+
+                        
+
+                        
+
+                      </ul>
+                  </div>
+                </div>
+
+
+              </div>
+              <b> Environment Rollout of CompDiffuser in Humanoid Medium Environment.</b> 
+            </div>
+          </div>  
+        </section>
+
+        <!-- <b> Qualitative Comparison in Meta-World Environment.</b>  -->
+        
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <!-- <h2 class="title is-4">OGBench </h2> -->
+
+        <section class="hero is-light is-small" style="margin: 0px; padding: 0px">
+          <div class="container is-max-desktop"  style="margin: 0px;  padding: 0px">
+            <div class="hero-body"  style="margin: 0px;  padding-bottom: 10px; padding-top: 10px">
+
+              <div class="container is-max-desktop" style="overflow: hidden; margin: 0px">
+
+                <div id="splide_humMaze_2d_large_stitch" class="splide">
+                  <div class="splide__track">
+                      <ul class="splide__list">
+
+
+                        <li class="splide__slide splide_kuka">
+
+                          <div class="splide_page_div_1" id="humMaze_2d_large_stitch">
+
+                             <div>
+                              <span class="splide_kuka_prob_id_repl">
+                                  HumanoidMaze Large Stitch
+                                  <span class="replay" video_section="humMaze_2d_large_stitch">
+                                    <img src="static/replay.png" />
+                                    <span>replay</span>
+                                  </span>
+                              </span>
+                            </div>
+                            
+                            <div class="kuka_base_row">
+
+                              <div>
+                                <video playsinline="" autoplay="" muted="">
+                                  <source src="materials/humMaze-2d-large-stitch/0-good/ep8_True.mp4" type="video/mp4">
+                                </video>
+                                <p class="splide_kuka_caption">Task 1</p>
+                              </div>
+
+                              <div>
+                                <video playsinline="" autoplay="" muted="">
+                                  <source src="materials/humMaze-2d-large-stitch/0-good/ep19_True.mp4" type="video/mp4">
+                                </video>
+                                <p class="splide_kuka_caption">Task 2</p>
+                              </div>
+
+                              <div>
+                                <video playsinline="" autoplay="" muted="">
+                                  <source src="materials/humMaze-2d-large-stitch/0-good/ep33_True.mp4" type="video/mp4">
+                                </video>
+                                <p class="splide_kuka_caption">Task 3</p>
+                              </div>
+
+                              <div>
+                                <video playsinline="" autoplay="" muted="">
+                                  <source src="materials/humMaze-2d-large-stitch/0-good/ep62_True.mp4" type="video/mp4">
+                                </video>
+                                <p class="splide_kuka_caption">Task 4</p>
+                              </div>
+
+
+                              <div>
+                                <video playsinline="" autoplay="" muted="">
+                                  <source src="materials/humMaze-2d-large-stitch/0-good-1/ep83_True.mp4" type="video/mp4">
+                                </video>
+                                <p class="splide_kuka_caption">Task 5</p>
+                              </div>
+
+                            </div>
+
+                          </div>
+                        </li>
+
+
+
+
+
+                        
+
+                        
+
+                        
+
+                        
+
+                      </ul>
+                  </div>
+                </div>
+
+
+              </div>
+              <b> Environment Rollout of CompDiffuser in Humanoid Large Environment.</b> 
+
+              
+            </div>
+          </div>  
+        </section>
+        
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <!-- <h2 class="title is-4">OGBench HumanoidMaze Stitch Datasets</h2> -->
+
+        <section class="hero is-light is-small" style="margin: 0px; padding: 0px">
+          <div class="container is-max-desktop"  style="margin: 0px;  padding: 0px">
+            <div class="hero-body"  style="margin: 0px;  padding-bottom: 10px; padding-top: 10px">
+
+              <div class="container is-max-desktop" style="overflow: hidden; margin: 0px">
+
+                <div id="splide_humMaze_2d_giant_stitch" class="splide">
+                  <div class="splide__track">
+                      <ul class="splide__list">
+
+
+                        <li class="splide__slide splide_kuka">
+
+                          <div class="splide_page_div_1" id="humMaze_2d_giant_stitch">
+
+                             <div>
+                              <span class="splide_kuka_prob_id_repl">
+                                  HumanoidMaze Giant Stitch
+                                  <span class="replay" video_section="humMaze_2d_giant_stitch">
+                                    <img src="static/replay.png" />
+                                    <span>replay</span>
+                                  </span>
+                              </span>
+                            </div>
+                            
+                            <div class="kuka_base_row">
+
+                              <div>
+                                <video playsinline="" autoplay="" muted="">
+                                  <source src="materials/humMaze-2d-giant-stitch/0-good-1/ep16_True.mp4" type="video/mp4">
+                                </video>
+                                <p class="splide_kuka_caption">Task 1</p>
+                              </div>
+
+                              <div>
+                                <video playsinline="" autoplay="" muted="">
+                                  <source src="materials/humMaze-2d-giant-stitch/0-good/ep34_True.mp4" type="video/mp4">
+                                </video>
+                                <p class="splide_kuka_caption">Task 2</p>
+                              </div>
+
+                              <div>
+                                <video playsinline="" autoplay="" muted="">
+                                  <source src="materials/humMaze-2d-giant-stitch/0-good/ep53_True.mp4" type="video/mp4">
+                                </video>
+                                <p class="splide_kuka_caption">Task 3</p>
+                              </div>
+
+                              <div>
+                                <video playsinline="" autoplay="" muted="">
+                                  <source src="materials/humMaze-2d-giant-stitch/0-good/ep72_True.mp4" type="video/mp4">
+                                </video>
+                                <p class="splide_kuka_caption">Task 4</p>
+                              </div>
+
+
+                              <div>
+                                <video playsinline="" autoplay="" muted="">
+                                  <source src="materials/humMaze-2d-giant-stitch/0-good-2/ep96_True.mp4" type="video/mp4">
+                                </video>
+                                <p class="splide_kuka_caption">Task 5</p>
+                              </div>
+
+                            </div>
+
+                          </div>
+                        </li>
+
+
+
+
+
+                        
+
+                        
+
+                        
+
+                        
+
+                      </ul>
+                  </div>
+                </div>
+
+
+              </div>
+              <b> Environment Rollout of CompDiffuser in Humanoid Giant Environment.</b> 
+              
+            </div>
+          </div>  
+        </section>
+        
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+
+
+<!-- Begins iTHOR Qualitative Results -->
+
+
+
+
+
+
+<!-- ============= Calvin ============== --> 
+<!-- ============= Calvin ============== --> 
 
 
 
