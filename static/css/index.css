@@ -359,13 +359,17 @@ body {
 
 
 .splide_kuka_caption { 
-  font-size: 18px;
+  /* font-size: 18px; */
+  font-size: 22px;
   color: #666;
   margin-top: 1px;
   margin-bottom: 20px;
   text-align: center;
 }
 
+.div_abs_text {
+  font-size: 18px;
+}
 
 /* 
 .splide__progress__bar {

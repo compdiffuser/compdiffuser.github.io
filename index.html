@@ -175,7 +175,7 @@
       <!-- <div class="column is-full-width"> -->
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
+        <div class="content has-text-justified div_abs_text">
           <p>
 
             Effective trajectory stitching for long-horizon planning is a significant challenge in robotic decision-making. While diffusion models have shown promise in planning, they are limited to solving tasks similar to those seen in their training data. We propose CompDiffuser, a novel generative approach that can solve new tasks by learning to compositionally stitch together shorter trajectory chunks from previously seen tasks. Our key insight is modeling the trajectory distribution by subdividing it into overlapping chunks and learning their conditional relationships through a single bidirectional diffusion model. This allows information to propagate between segments during generation, ensuring physically consistent connections. 
@@ -393,6 +393,12 @@
 
 <!-- ================================================== -->
 
+
+
+
+
+
+
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
@@ -408,19 +414,19 @@
 
 
                 <!-- NOTE: AntMaze Medium Stitch 2D -->
-                <div id="splide-antmaze-medium-qual" class="splide">
+                <div id="splide-antmaze-medium-qual-v2" class="splide">
                   <div class="splide__track">
                       <ul class="splide__list">
 
-                        <li class="splide__slide splide_kuka">
+                        <li class="splide__slide splide_cpdfu">
 
-                          <div class="splide_page_div_1" id="lb_qual_tk65">
+                          <div class="splide_page_div_1" id="antmaze_2d_medium_page1">
 
 
                              <div>
                               <span class="splide_kuka_prob_id_repl">
                                   AntMaze Medium Stitch
-                                  <span class="replay" video_section="lb_qual_tk65">
+                                  <span class="replay" video_section="antmaze_2d_medium_page1">
                                     <img src="static/replay.png" />
                                     <span>replay</span>
                                   </span>
@@ -428,7 +434,7 @@
                             </div>
                             
 
-                            <div class="kuka_base_row">
+                            <div class="cpdfu_base_row">
 
                               <div>
                                 <video playsinline="" autoplay="" muted="">
@@ -451,6 +457,32 @@
                                 <p class="splide_kuka_caption">Task 3</p>
                               </div>
 
+                            </div>
+
+                          </div>
+                        </li>
+
+
+
+                        <li class="splide__slide splide_cpdfu">
+
+                          <div class="splide_page_div_1" id="antmaze_2d_medium_page2">
+
+
+                             <div>
+                              <span class="splide_kuka_prob_id_repl">
+                                  AntMaze Medium Stitch
+                                  <span class="replay" video_section="antmaze_2d_medium_page2">
+                                    <img src="static/replay.png" />
+                                    <span>replay</span>
+                                  </span>
+                              </span>
+                            </div>
+                            
+
+                            <div class="cpdfu_base_row">
+
+
                               <div>
                                 <video playsinline="" autoplay="" muted="">
                                   <source src="materials/antmaze-2d-medium-stitch/0-good/ep60_True.mp4" type="video/mp4">
@@ -464,6 +496,8 @@
                                 </video>
                                 <p class="splide_kuka_caption">Task 5</p>
                               </div>
+
+                              
 
                             </div>
 
@@ -504,6 +538,11 @@
 
 
 
+
+
+
+
+
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
@@ -523,7 +562,7 @@
                   <div class="splide__track">
                       <ul class="splide__list">
 
-                        <li class="splide__slide splide_kuka">
+                        <li class="splide__slide splide_cpdfu">
 
                           <div class="splide_page_div_1" id="antmaze_2d_large_stitch">
 
@@ -539,7 +578,7 @@
                             </div>
                             
 
-                            <div class="kuka_base_row">
+                            <div class="cpdfu_base_row">
 
                               <div>
                                 <video playsinline="" autoplay="" muted="">
@@ -561,6 +600,31 @@
                                 </video>
                                 <p class="splide_kuka_caption">Task 3</p>
                               </div>
+
+
+                            </div>
+
+                          </div>
+                        </li>
+
+
+                        <li class="splide__slide splide_cpdfu">
+
+                          <div class="splide_page_div_1" id="antmaze_2d_large_stitch_page2">
+
+
+                             <div>
+                              <span class="splide_kuka_prob_id_repl">
+                                  AntMaze Large Stitch
+                                  <span class="replay" video_section="antmaze_2d_large_stitch_page2">
+                                    <img src="static/replay.png" />
+                                    <span>replay</span>
+                                  </span>
+                              </span>
+                            </div>
+                            
+
+                            <div class="cpdfu_base_row">
 
                               <div>
                                 <video playsinline="" autoplay="" muted="">
@@ -639,7 +703,7 @@
                   <div class="splide__track">
                       <ul class="splide__list">
 
-                        <li class="splide__slide splide_kuka">
+                        <li class="splide__slide splide_cpdfu">
 
                           <div class="splide_page_div_1" id="antmaze_2d_giant_stitch_grp1">
 
@@ -655,7 +719,7 @@
                             </div>
                             
 
-                            <div class="kuka_base_row">
+                            <div class="cpdfu_base_row">
 
                               <div>
                                 <video playsinline="" autoplay="" muted="">
@@ -678,6 +742,30 @@
                                 <p class="splide_kuka_caption">Task 3</p>
                               </div>
 
+                            </div>
+
+                          </div>
+                        </li>
+
+
+                        <li class="splide__slide splide_cpdfu">
+
+                          <div class="splide_page_div_1" id="antmaze_2d_giant_stitch_grp1_page2">
+
+
+                             <div>
+                              <span class="splide_kuka_prob_id_repl">
+                                  AntMaze Giant Stitch
+                                  <span class="replay" video_section="antmaze_2d_giant_stitch_grp1_page2">
+                                    <img src="static/replay.png" />
+                                    <span>replay</span>
+                                  </span>
+                              </span>
+                            </div>
+                            
+
+                            <div class="cpdfu_base_row">
+
                               <div>
                                 <video playsinline="" autoplay="" muted="">
                                   <source src="materials/antmaze-2d-giant-stitch/0-good/ep66_True.mp4" type="video/mp4">
@@ -699,7 +787,7 @@
 
 
                         <!-- Second Group -->
-                        <li class="splide__slide splide_kuka">
+                        <!-- <li class="splide__slide splide_kuka">
 
                           <div class="splide_page_div_1" id="antmaze_2d_giant_stitch_grp2">
 
@@ -755,7 +843,7 @@
                             </div>
 
                           </div>
-                        </li>
+                        </li> -->
 
                         
 
@@ -775,7 +863,8 @@
 
               </div>
               <b> Qualitative Results in OGBench AntMaze Large Stitch Environment.</b> 
-              The blue circle denotes the start position, the pink circle denotes the goal position, the yellow circle
+              The blue circle denotes the start position, the pink circle denotes the goal position, 
+              and the yellow circle denotes the current subgoal waypoint for the agent.
             </div>
           </div>  
         </section>
@@ -948,7 +1037,7 @@
                   <!-- <video id="cal-our-qual-list-predv" muted preload="metadata"> -->
                     <!-- <source src="materials/calvin/ours-turn-on-lightbulb/predv_0_tk1_turn_on_lightbulb_envSd105_fps4.mp4" type="video/mp4"> -->
                   <!-- </video> -->
-                  <img id="antmaze_high_dim_topdown" src="materials/vis_web_agv/antmaze-large-stitch-v0/ours_tk1_ncp5_sd85_back_luo_v3_250205-231630.png" alt="" style="max-width: 235px">
+                  <img id="antmaze_high_dim_topdown" src="materials/vis_web_agv/antmaze-large-stitch-v0/ours_tk1_ncp5_sd85_back_luo_v3_250205-231630.png" alt="">
 
                 </div>
 
@@ -1107,23 +1196,21 @@
                       <ul class="splide__list">
 
 
+                        <li class="splide__slide splide_cpdfu">
 
-                        <!-- iThor FloorPlan1 Bread 19 -->
-                        <li class="splide__slide splide_kuka">
-
-                          <div class="splide_page_div_1" id="ithor_qual_fp1">
+                          <div class="splide_page_div_1" id="antsoccer_arena_17d_qual">
 
                              <div>
                               <span class="splide_kuka_prob_id_repl">
                                   AntSoccer Arena Stitch
-                                  <span class="replay" video_section="ithor_qual_fp1">
+                                  <span class="replay" video_section="antsoccer_arena_17d_qual">
                                     <img src="static/replay.png" />
                                     <span>replay</span>
                                   </span>
                               </span>
                             </div>
                             
-                            <div class="kuka_base_row">
+                            <div class="cpdfu_base_row">
 
                               <div>
                                 <video playsinline="" autoplay="" muted="">
@@ -1145,6 +1232,29 @@
                                 </video>
                                 <p class="splide_kuka_caption">Task 3</p>
                               </div>
+
+
+                            </div>
+
+                          </div>
+                        </li>
+
+
+                        <li class="splide__slide splide_cpdfu">
+
+                          <div class="splide_page_div_1" id="antsoccer_arena_17d_qual_page2">
+
+                             <div>
+                              <span class="splide_kuka_prob_id_repl">
+                                  AntSoccer Arena Stitch
+                                  <span class="replay" video_section="antsoccer_arena_17d_qual_page2">
+                                    <img src="static/replay.png" />
+                                    <span>replay</span>
+                                  </span>
+                              </span>
+                            </div>
+                            
+                            <div class="cpdfu_base_row">
 
                               <div>
                                 <video playsinline="" autoplay="" muted="">
@@ -1222,47 +1332,68 @@
 
 
 
-                        <!-- iThor FloorPlan1 Bread 19 -->
-                        <li class="splide__slide splide_kuka">
+                        <!-- Ant Soccer Medium -->
+                        <li class="splide__slide splide_cpdfu">
 
-                          <div class="splide_page_div_1" id="ithor_qual_fp1">
+                          <div class="splide_page_div_1" id="antsoccer_medium_17d_qual_page1">
 
                              <div>
                               <span class="splide_kuka_prob_id_repl">
                                   AntSoccer Medium Stitch
-                                  <span class="replay" video_section="ithor_qual_fp1">
+                                  <span class="replay" video_section="antsoccer_medium_17d_qual_page1">
                                     <img src="static/replay.png" />
                                     <span>replay</span>
                                   </span>
                               </span>
                             </div>
                             
-                            <div class="kuka_base_row">
+                            <div class="cpdfu_base_row">
 
                               <div>
                                 <video playsinline="" autoplay="" muted="">
-                                  <source src="" type="video/mp4">
+                                  <source src="materials/antsoccer-17d-medium-stitch/tk1-5-qual-good/ep1_True.mp4" type="video/mp4">
                                 </video>
                                 <p class="splide_kuka_caption">Task 1</p>
                               </div>
 
                               <div>
                                 <video playsinline="" autoplay="" muted="">
-                                  <source src="" type="video/mp4">
+                                  <source src="materials/antsoccer-17d-medium-stitch/tk1-5-qual-good/ep24_True.mp4" type="video/mp4">
                                 </video>
                                 <p class="splide_kuka_caption">Task 2</p>
                               </div>
 
                               <div>
                                 <video playsinline="" autoplay="" muted="">
-                                  <source src="" type="video/mp4">
+                                  <source src="materials/antsoccer-17d-medium-stitch/tk1-5-qual-good/ep44_True.mp4" type="video/mp4">
                                 </video>
                                 <p class="splide_kuka_caption">Task 3</p>
                               </div>
 
+                            </div>
+
+                          </div>
+                        </li>
+
+                        <li class="splide__slide splide_cpdfu">
+
+                          <div class="splide_page_div_1" id="antsoccer_medium_17d_qual_page2">
+
+                             <div>
+                              <span class="splide_kuka_prob_id_repl">
+                                  AntSoccer Medium Stitch
+                                  <span class="replay" video_section="antsoccer_medium_17d_qual_page2">
+                                    <img src="static/replay.png" />
+                                    <span>replay</span>
+                                  </span>
+                              </span>
+                            </div>
+                            
+                            <div class="cpdfu_base_row">
+
                               <div>
                                 <video playsinline="" autoplay="" muted="">
-                                  <source src="" type="video/mp4">
+                                  <source src="materials/antsoccer-17d-medium-stitch/tk1-5-qual-good/ep73_True.mp4" type="video/mp4">
                                 </video>
                                 <p class="splide_kuka_caption">Task 4</p>
                               </div>
@@ -1270,7 +1401,7 @@
 
                               <div>
                                 <video playsinline="" autoplay="" muted="">
-                                  <source src="" type="video/mp4">
+                                  <source src="materials/antsoccer-17d-medium-stitch/tk1-5-qual-good/ep96_True.mp4" type="video/mp4">
                                 </video>
                                 <p class="splide_kuka_caption">Task 5</p>
                               </div>
@@ -1349,21 +1480,21 @@
                       <ul class="splide__list">
 
 
-                        <li class="splide__slide splide_kuka">
+                        <li class="splide__slide splide_cpdfu">
 
-                          <div class="splide_page_div_1" id="mw_qual_tk4">
+                          <div class="splide_page_div_1" id="humanoid_2d_medium_qual_page1">
 
                              <div>
                               <span class="splide_kuka_prob_id_repl">
                                   HumanoidMaze Medium Stitch
-                                  <span class="replay" video_section="mw_qual_tk4">
+                                  <span class="replay" video_section="humanoid_2d_medium_qual_page1">
                                     <img src="static/replay.png" />
                                     <span>replay</span>
                                   </span>
                               </span>
                             </div>
                             
-                            <div class="kuka_base_row">
+                            <div class="cpdfu_base_row">
 
                               <div>
                                 <video playsinline="" autoplay="" muted="">
@@ -1386,6 +1517,29 @@
                                 <p class="splide_kuka_caption">Task 3</p>
                               </div>
 
+                              
+
+                            </div>
+
+                          </div>
+                        </li>
+
+                        <li class="splide__slide splide_cpdfu">
+
+                          <div class="splide_page_div_1" id="humanoid_2d_medium_qual_page2">
+
+                             <div>
+                              <span class="splide_kuka_prob_id_repl">
+                                  HumanoidMaze Medium Stitch
+                                  <span class="replay" video_section="humanoid_2d_medium_qual_page2">
+                                    <img src="static/replay.png" />
+                                    <span>replay</span>
+                                  </span>
+                              </span>
+                            </div>
+                            
+                            <div class="cpdfu_base_row">
+                              
                               <div>
                                 <video playsinline="" autoplay="" muted="">
                                   <source src="materials/humMaze-2d-medium-stitch/0-good/ep79_True.mp4" type="video/mp4">
@@ -1429,7 +1583,7 @@
           </div>  
         </section>
 
-        <!-- <b> Qualitative Comparison in Meta-World Environment.</b>  -->
+
         
         
       </div>
@@ -1472,21 +1626,21 @@
                       <ul class="splide__list">
 
 
-                        <li class="splide__slide splide_kuka">
+                        <li class="splide__slide splide_cpdfu">
 
-                          <div class="splide_page_div_1" id="humMaze_2d_large_stitch">
+                          <div class="splide_page_div_1" id="humMaze_2d_large_stitch_page1">
 
                              <div>
                               <span class="splide_kuka_prob_id_repl">
                                   HumanoidMaze Large Stitch
-                                  <span class="replay" video_section="humMaze_2d_large_stitch">
+                                  <span class="replay" video_section="humMaze_2d_large_stitch_page1">
                                     <img src="static/replay.png" />
                                     <span>replay</span>
                                   </span>
                               </span>
                             </div>
                             
-                            <div class="kuka_base_row">
+                            <div class="cpdfu_base_row">
 
                               <div>
                                 <video playsinline="" autoplay="" muted="">
@@ -1508,6 +1662,45 @@
                                 </video>
                                 <p class="splide_kuka_caption">Task 3</p>
                               </div>
+
+                              <!-- <div>
+                                <video playsinline="" autoplay="" muted="">
+                                  <source src="materials/humMaze-2d-large-stitch/0-good/ep62_True.mp4" type="video/mp4">
+                                </video>
+                                <p class="splide_kuka_caption">Task 4</p>
+                              </div>
+
+
+                              <div>
+                                <video playsinline="" autoplay="" muted="">
+                                  <source src="materials/humMaze-2d-large-stitch/0-good-1/ep83_True.mp4" type="video/mp4">
+                                </video>
+                                <p class="splide_kuka_caption">Task 5</p>
+                              </div> -->
+
+                            </div>
+
+                          </div>
+                        </li>
+
+
+                        <li class="splide__slide splide_cpdfu">
+
+                          <div class="splide_page_div_1" id="humMaze_2d_large_stitch_page2">
+
+                             <div>
+                              <span class="splide_kuka_prob_id_repl">
+                                  HumanoidMaze Large Stitch
+                                  <span class="replay" video_section="humMaze_2d_large_stitch_page2">
+                                    <img src="static/replay.png" />
+                                    <span>replay</span>
+                                  </span>
+                              </span>
+                            </div>
+                            
+                            <div class="cpdfu_base_row">
+
+                              
 
                               <div>
                                 <video playsinline="" autoplay="" muted="">
@@ -1585,21 +1778,21 @@
                       <ul class="splide__list">
 
 
-                        <li class="splide__slide splide_kuka">
+                        <li class="splide__slide splide_cpdfu">
 
-                          <div class="splide_page_div_1" id="humMaze_2d_giant_stitch">
+                          <div class="splide_page_div_1" id="humMaze_2d_giant_stitch_page1">
 
                              <div>
                               <span class="splide_kuka_prob_id_repl">
                                   HumanoidMaze Giant Stitch
-                                  <span class="replay" video_section="humMaze_2d_giant_stitch">
+                                  <span class="replay" video_section="humMaze_2d_giant_stitch_page1">
                                     <img src="static/replay.png" />
                                     <span>replay</span>
                                   </span>
                               </span>
                             </div>
                             
-                            <div class="kuka_base_row">
+                            <div class="cpdfu_base_row">
 
                               <div>
                                 <video playsinline="" autoplay="" muted="">
@@ -1621,6 +1814,30 @@
                                 </video>
                                 <p class="splide_kuka_caption">Task 3</p>
                               </div>
+
+                              
+
+                            </div>
+
+                          </div>
+                        </li>
+
+
+                        <li class="splide__slide splide_cpdfu">
+
+                          <div class="splide_page_div_1" id="humMaze_2d_giant_stitch_page2">
+
+                             <div>
+                              <span class="splide_kuka_prob_id_repl">
+                                  HumanoidMaze Giant Stitch
+                                  <span class="replay" video_section="humMaze_2d_giant_stitch_page2">
+                                    <img src="static/replay.png" />
+                                    <span>replay</span>
+                                  </span>
+                              </span>
+                            </div>
+                            
+                            <div class="cpdfu_base_row">
 
                               <div>
                                 <video playsinline="" autoplay="" muted="">

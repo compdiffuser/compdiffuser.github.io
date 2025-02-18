@@ -28,8 +28,35 @@
 
 
 
+//// Feb 17 Out-dated
+// var splide = new Splide( '#splide-antmaze-medium-qual', {
+//   // type: 'loop', 
+//   type: 'slide', 
+//   perPage: 1,
+//   perMove: 1,
+//   // gap    : '2rem',
+//   padding: '0rem',
+//   lazyLoad: 'nearby',
+//   focus    : 0,
+//   pagination: true,
+//   breakpoints: {
+//     640: {
+//       arrows: false,
+//     }
+//   },
+//   arrows: false,
+//   // paginationKeyboard: false,
 
-var splide = new Splide( '#splide-antmaze-medium-qual', {
+//   // autoplay:  true,
+  
+// }
+// );
+
+// splide.mount();
+
+
+
+var splide = new Splide( '#splide-antmaze-medium-qual-v2', {
   // type: 'loop', 
   type: 'slide', 
   perPage: 1,
@@ -44,7 +71,7 @@ var splide = new Splide( '#splide-antmaze-medium-qual', {
       arrows: false,
     }
   },
-  arrows: false,
+  // arrows: false,
   // paginationKeyboard: false,
 
   // autoplay:  true,
@@ -71,7 +98,7 @@ var splide = new Splide( '#splide-antmaze-large-qual', {
       arrows: false,
     }
   },
-  arrows: false,
+  // arrows: false,
   // paginationKeyboard: false,
 
   // autoplay:  true,
@@ -112,26 +139,6 @@ splide.mount();
 
 
 
-var splide = new Splide( '#splide_humMaze_2d_medium_stitch', { 
-  type: 'slide', 
-  perPage: 1,
-  perMove: 1,
-  padding: '0rem',
-  lazyLoad: 'nearby',
-  focus    : 0,
-  pagination: true,
-  breakpoints: {
-    640: {
-      arrows: false,
-    }
-  },
-  arrows: false,
-}
-);
-
-splide.mount();
-// 
-// 
 
 // var splide = new Splide( '#splide-cal-qual', { 
 //   type: 'slide', 
@@ -167,7 +174,8 @@ var splide = new Splide( '#splide-antsoccer-arena-qual', {
       arrows: false,
     }
   },
-  arrows: false,
+  // arrows: false,
+
 }
 );
 
@@ -198,6 +206,28 @@ splide.mount();
 //
 //
 
+//// HumanoidMaze
+var splide = new Splide( '#splide_humMaze_2d_medium_stitch', { 
+  type: 'slide', 
+  perPage: 1,
+  perMove: 1,
+  padding: '0rem',
+  lazyLoad: 'nearby',
+  focus    : 0,
+  pagination: true,
+  breakpoints: {
+    640: {
+      arrows: false,
+    }
+  },
+  // arrows: false,
+}
+);
+
+splide.mount();
+// 
+// 
+
 
 
 var splide = new Splide( '#splide_humMaze_2d_large_stitch', {
@@ -215,7 +245,7 @@ var splide = new Splide( '#splide_humMaze_2d_large_stitch', {
       arrows: false,
     }
   },
-  arrows: false,
+  // arrows: false,
   
 }
 );
@@ -241,7 +271,7 @@ var splide = new Splide( '#splide_humMaze_2d_giant_stitch', {
       arrows: false,
     }
   },
-  arrows: false,
+  // arrows: false,
 
   
 }
