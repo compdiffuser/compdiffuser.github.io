@@ -247,11 +247,12 @@
           <!-- <div class="has-text-centered"></div> -->
           <br/>
           <p>
-            <div>
+            <div class="left-caption">
               <b>Compositional Trajectory Denoising Process.</b>
               We train CompDiffuser on the OGBench PointMaze Large Stitch Dataset, which only contains short trajectories that travel at most 4 blocks. 
-              However, at test time, the agent needs to travel up to 15 blocks to reach the given goal (purple star) from the start (blue circle).
+              However, at test time, the agent needs to travel up to 15 blocks to reach the given goal (purple star) from the given start (blue circle).
               The proposed method is able to compositionally sample 5 trajectories, as shown by different colors, to construct a goal-reaching trajectory of much longer horizon than those seen in the training dataset.
+              <!-- <br/> -->
               <!-- from start (blue circle) to goal (purple star). -->
               <span class="comp_dfu_prc_repl">
                 <span class="replay_v2" video_section="comp_dfu_proc_pntmaze_large">
@@ -1160,6 +1161,78 @@
   </div>
 </section>
 
+
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+
+        <h2 class="title is-4">Compositional Planning in Complex Dynamics</h2>
+
+
+        <div class="container bg-3">
+          <div class="centered-caption" style="justify-content: center;">
+
+            <!-- <span class="splide_kuka_prob_id_repl">
+              <span class="replay_lb_suc" video_section="div_cal_our_qual">
+                <img src="static/replay.png" />
+                <span>replay</span>
+              </span>
+            </span> -->
+            
+
+            <div class="video-container" style="gap: 0px" id="div_vis_plan_antsoccer_arena">
+
+                <div class="antmaze_explore_item">
+                  <p class="splide_lb_suc_vs_rollout_repl cal_our_qual_caption">
+                    Synthesized Plan: Top-down View
+                  </p>
+                  <video id="tmp_1" muted autoplay="" preload="metadata">
+                    <source src="materials/antsoccer-17d-arena-stitch/o17d_tk3_sd45/interleave_o17d_tk3_ncp4_sd45_None_fps50_250221-214904.mp4" type="video/mp4">
+                  </video>
+                </div>
+
+                <div class="antmaze_explore_item">
+                  <div class="multi_hor_rm2d_caption cal_our_qual_caption"> 
+                    Synthesized Plan: Zoom-in View
+                  </div>
+
+                  <video id="tmp_2" muted autoplay="" preload="metadata">
+                    <source src="materials/antsoccer-17d-arena-stitch/o17d_tk3_sd45/interleave_o17d_tk3_ncp4_sd45_back_luo_v3_fps50_250221-214654.mp4" type="video/mp4">
+                  </video>
+
+                </div>
+            </div>
+            
+            
+
+              
+
+            <div class="left-caption" style="margin-top: 10px;">
+              <b>Qualitative Compositional Plan in OGBench AntSoccer Stitch Dataset.</b> 
+              We generate four trajectories compositionally, as highlighted by the color of the circle beneath the ant (color order: blue -> orange -> green -> red; the circle is just for visualization purpose). 
+              This enables our planner to complete new tasks: the ant moves to the soccer ball and then dribbles the ball to the goal location (indicated by pink circle). 
+              We use inpainting to enable the goal conditioning in our planner (the inpainted goal state is shown in the last frame of the video).
+              See the <i>Dataset types</i> Section in the 
+              <a href="https://seohong.me/projects/ogbench/">OGBench</a>
+               website for dataset examples.
+            </div>
+          
+          </div>
+        </div>
+       
+
+        
+
+        
+      </div>
+    </div>
+  </div>
+</section>
 
 
 
